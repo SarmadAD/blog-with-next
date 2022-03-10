@@ -1,12 +1,17 @@
+import Link from "next/link";
 import * as React from "react";
 import styled from "styled-components";
 
 export function Post({ id, title, date }) {
   return (
-    <Container>
-      <Title id={id}>{title}</Title>
-      <time dateTime={date}>{date}</time>
-    </Container>
+    <Link href={`/blog/${id}`}>
+      <a>
+        <Container>
+          <Title id={id}>{title}</Title>
+          <time dateTime={date}>{date}</time>
+        </Container>
+      </a>
+    </Link>
   );
 }
 
