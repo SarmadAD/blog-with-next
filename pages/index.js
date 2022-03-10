@@ -1,14 +1,13 @@
+import styled from "styled-components";
 import { PostList } from "../components/PostList/PostList";
 import { getSortedPostsData } from "../lib/posts";
 
 export default function Home({ posts }) {
   return (
-    <>
-      <h1>My Blog</h1>
-      <p>Lorem Ipsum…</p>
-      <h2>Posts</h2>
+    <HomeContainer>
+      <h2 style={{color:'#E1E7DE'}}>Blog</h2>
       <PostList posts={posts} />
-    </>
+    </HomeContainer>
   );
 }
 
@@ -20,3 +19,9 @@ export async function getStaticProps() {
     },
   };
 }
+
+const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

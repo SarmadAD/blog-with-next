@@ -15,10 +15,9 @@ export function PostList({ posts }) {
 }
 
 const List = styled.ul`
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content:center;
   gap: 1rem;
   max-width: 60ch;
   list-style: none;
