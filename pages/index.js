@@ -5,7 +5,7 @@ import { getSortedPostsData } from "../lib/posts";
 export default function Home({ posts }) {
   return (
     <HomeContainer>
-      <h2 style={{color:'#E1E7DE'}}>Blog</h2>
+      <h2>Blog</h2>
       <PostList posts={posts} />
     </HomeContainer>
   );

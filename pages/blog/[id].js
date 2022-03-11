@@ -1,16 +1,20 @@
 import Link from "next/link";
+import styled from "styled-components";
+import Button from "../../components/Button";
 import { getPostData, getSortedPostsData } from "../../lib/posts";
 
 export default function BlogPost({ post }) {
   return (
-    <>
-      <h1>{post.title}</h1>
-      <time dateTime={post.date}>{post.date}</time>
-      <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
-      <Link href="/">
-        <a>← Back home</a>
-      </Link>
-    </>
+    <PostContainer>
+      <PostArticle>
+        <h1>{post.title}</h1>
+        <time dateTime={post.date}>{post.date}</time>
+        <div dangerouslySetInnerHTML={{ __html: post.contentHtml }}></div>
+        <Link href="/">
+          <a><Button text={'← Back home'} /></a>
+        </Link>
+      </PostArticle>
+    </PostContainer>
   );
 }
 
@@ -32,3 +36,24 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+const PostArticle = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  time{
+    width: 100%;
+    font-weight: lighter;
+  }
+`;
+
+const PostContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;

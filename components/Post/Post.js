@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export function Post({ id, title, date }) {
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/blog/${id}`} passHref>
       <LinkContainer>
         <Container>
           <Title id={id}>{title}</Title>
@@ -29,4 +29,5 @@ const Title = styled.h3`
 const LinkContainer = styled.a`
   text-decoration: none;
   cursor: pointer;
+  color: black;
 `;
